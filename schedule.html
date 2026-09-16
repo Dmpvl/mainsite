@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Павлюк Дмитро — Розклад</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .schedule-page { padding: 100px 0 55px; min-height: calc(100vh - 68px); }
+    .back { display:inline-block; margin-bottom:20px; color:var(--muted); font-size:.72rem; }
+    .back:hover { color:var(--text); }
+    .schedule-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:18px; }
+    .schedule-head h1 { font:600 clamp(1.7rem,4vw,2.8rem)/1 "Space Grotesk",sans-serif; letter-spacing:-.045em; }
+    .schedule-head p { color:var(--muted); font-size:.72rem; margin-top:5px; }
+    .source-link { color:#a685d6; font-size:.68rem; white-space:nowrap; }
+    .schedule-box {
+      border:1px solid var(--border);
+      border-radius:10px;
+      overflow:hidden;
+      background:var(--surface);
+    }
+    .schedule-box iframe {
+      display:block;
+      width:100%;
+      height:720px;
+      border:0;
+      background:#fff;
+    }
+    .notice {
+      padding:11px 14px;
+      border-bottom:1px solid var(--border);
+      color:var(--muted);
+      font-size:.68rem;
+      background:#0d0b12;
+    }
+    @media(max-width:700px) {
+      .schedule-page { padding-top:105px; }
+      .schedule-head { align-items:flex-start; flex-direction:column; gap:8px; }
+      .schedule-box iframe { height:700px; }
+    }
+    .lesson {
+            border-radius: 6px;
+            padding: 8px;
+            color: var(--cell-text);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .lesson.lk {
+            background-color: var(--lk-bg);
+            border: 1px solid var(--lk-border);
+        }
+
+        .lesson.lb {
+            background-color: var(--lb-bg);
+            border: 1px solid var(--lb-border);
+        }
+
+        .lesson.pz {
+            background-color: var(--pz-bg);
+            border: 1px solid var(--pz-border);
+        }
+
+        .lesson-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .lesson-aud {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        .lesson-teacher {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #334155;
+        }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">Павлюк Дмитро</a>
+    <nav class="nav">
+      <a href="index.html#main" class="nav-link">Головна</a>
+      <a href="index.html#about" class="nav-link">Про мене</a>
+      <a href="index.html#projects" class="nav-link active">Практичні роботи</a>
+      <a href="index.html#projects-2" class="nav-link">Лабораторні роботи</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+        <div class="page-header">
+            <h2>Практична робота №1</h2>
+            <p>Розклад занять на вересень 2026 року</p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">День / Час</th>
+                        <th class="date-header">14.09.2026 – 20.09.2026</th>
+                        <th class="date-header">21.09.2026 – 27.09.2026</th>
+                        <th class="date-header">28.09.2026 – 04.10.2026</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td rowspan="5" class="day-header">Пн</td>
+                        <td class="time-cell">2 пара<br>09:30 - 10:50</td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ЗВВБ-2017 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Пильнова В.П.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">WEB тех.-2016 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Дзюба В.В.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ЗВВБ-2017 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Пильнова В.П.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">3 пара<br>11:10 - 12:30</td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ДТМІ-2018 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Бученко І.А.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ПРО-2017 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Торошанко Я.І.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ДТМІ-2018 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Бученко І.А.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">4 пара<br>12:40 - 14:00</td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">МЗШІ-2020 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Звенигородський О.С.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">МЗШІ-2020 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Звенигородський О.С.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">5 пара<br>14:10 - 15:30</td>
+                        <td class="empty-cell"></td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ПРО-2017 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Торошанко Я.І.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">6 пара<br>15:40 - 17:00</td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ХТ-15 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Шикула О.М.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                        <td>
+                            <div class="lesson lk">
+                                <span class="lesson-title">ХТ-15 [Лк]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Шикула О.М.</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="day-header">Вт</td>
+                        <td class="time-cell">1 пара<br>08:00 - 09:20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="day-header">Ср</td>
+                        <td class="time-cell">2 пара<br>09:30 - 10:50</td>
+                        <td>
+                            <div class="lesson lb">
+                                <span class="lesson-title">МЗШІ-2020 [Лб]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Звенигородський О.С.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">МЗШІ-2020 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Звенигородський О.С.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lb">
+                                <span class="lesson-title">МЗШІ-2020 [Лб]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Звенигородський О.С.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">3 пара<br>11:10 - 12:30</td>
+                        <td>
+                            <div class="lesson lb">
+                                <span class="lesson-title">ПРО-2017 [Лб]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Торошанко Я.І.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">ПРО-2017 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Торошанко Я.І.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson lb">
+                                <span class="lesson-title">ПРО-2017 [Лб]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Торошанко Я.І.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">4 пара<br>12:40 - 14:00</td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">WEB тех.-2016 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Дзюба В.В.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">WEB тех.-2016 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Дзюба В.В.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">WEB тех.-2016 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Дзюба В.В.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">5 пара<br>14:10 - 15:30</td>
+                        <td class="empty-cell"></td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">ХТ-15 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Шикула О.М.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2" class="day-header">Чт</td>
+                        <td class="time-cell">3 пара<br>11:10 - 12:30</td>
+                        <td>
+                            <div class="lesson lb">
+                                <span class="lesson-title">ДТМІ-2018 [Лб]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Бученко І.А.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">ДТМІ-2018 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Бученко І.А.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">4 пара<br>12:40 - 14:00</td>
+                        <td class="empty-cell"></td>
+                        <td>
+                            <div class="lesson pz">
+                                <span class="lesson-title">ЗВВБ-2017 [Пз]</span>
+                                <span class="lesson-aud">ауд. Дистанц.</span>
+                                <span class="lesson-teacher">Пильнова В.П.</span>
+                            </div>
+                        </td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="day-header">Пт</td>
+                        <td class="time-cell">1 пара<br>08:00 - 09:20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="day-header">Сб</td>
+                        <td class="time-cell">1 пара<br>08:00 - 09:20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="day-header">Нд</td>
+                        <td class="time-cell">1 пара<br>08:00 - 09:20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Контактні дані</span>
+      <a href="[GITHUB URL]" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
