@@ -1,0 +1,48 @@
+li:first-of-type {
+    font-weight: bold;
+}
+li:first-of-type,
+li:last-of-type {
+    font-size: 24px;
+}
+li:nth-of-type(even) {
+    font-weight: bold;
+}
+a:last-of-type {
+    color:red
+}
+
+p::first-letter {
+    font-size: 36px;
+}
+div > p {
+    font-weight: bolder;
+    font-size: 16px;
+}
+a[href^="https"]{
+    color:green
+}
+li > a {
+    text-decoration: underline;
+}
+a::after {
+    content: " ↗";
+}
+.special + li {
+    text-decoration: line-through;
+}
+p:first-child{
+    font-size: 24px;
+}
+input[type="checkbox"] {
+    accent-color: lightblue;
+}
+input[type="text"] {
+    border: 1px solid blue;
+}
+input:disabled {
+    background-color: gray;
+}
+input[type="text"]:not(:disabled) {
+    background-color: gray;
+}
