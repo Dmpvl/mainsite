@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 220px;
+    padding: 12px;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    gap: 4px;
+}
+
+.sidebar-section h2 {
+    font-size: 22px;
+}
+
+.sidebar-section h3 {
+    font-size: 16px;
+    margin: 8px 12px;
+}
+
+.sidebar-section a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.sidebar-section a:hover {
+    background-color: #272727;
+}
+
+.logo {
+    border-bottom: none;
+}
+
+/* Main content */
+
+.main-content {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+}
+
+/* Top search bar */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 24px;
+    min-height: 64px;
+}
+
+.menu-button {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    flex: 0 1 650px;
+    min-width: 0;
+    height: 42px;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 0;
+    background-color: #121212;
+    border: 1px solid #333;
+    border-radius: 24px 0 0 24px;
+    padding: 0 18px;
+    color: white;
+    font-size: 16px;
+}
+
+.search-bar button {
+    width: 65px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 0 24px 24px 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Topic choices */
+
+.topics {
+    display: flex;
+    gap: 12px;
+    padding: 12px 24px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.topics button {
+    flex: 0 0 auto;
+    background-color: #272727;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.topics button:hover {
+    background-color: #3f3f3f;
+}
+
+.topics .active {
+    background-color: white;
+    color: black;
+}
+
+/* Video grid */
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 32px 16px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    min-width: 0;
+    max-width: 450px;
+    gap: 12px;
+}
+
+.thumbnail {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.thumbnail span {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.thumb-one {
+    background: linear-gradient(135deg, #184c75, #39a0a3);
+}
+
+.thumb-two {
+    background: linear-gradient(135deg, #702963, #e94560);
+}
+
+.thumb-three {
+    background: linear-gradient(135deg, #174a35, #4b9b70);
+}
+
+.thumb-four {
+    background: linear-gradient(135deg, #3a3a6a, #a58ac4);
+}
+
+.thumb-five {
+    background: linear-gradient(135deg, #a64b22, #e6b45c);
+}
+
+.thumb-six {
+    background: linear-gradient(135deg, #203a70, #5e8ed6);
+}
+
+/* Video information */
+
+.video-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.channel-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 38px;
+    height: 38px;
+    background-color: #333;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.video-info h3 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.video-info p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+    .sidebar {
+        flex-basis: 180px;
+    }
+
+    .video-grid {
+        padding: 12px;
+    }
+
+    .top-bar {
+        padding: 12px;
+    }
+
+    .topics {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        flex-basis: 76px;
+        padding: 8px 4px;
+    }
+
+    .sidebar-section {
+        align-items: center;
+    }
+
+    .sidebar-section h2 {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .sidebar-section h3 {
+        font-size: 10px;
+        margin: 4px 0;
+        text-align: center;
+    }
+
+    .sidebar-section a {
+        font-size: 10px;
+        text-align: center;
+        padding: 10px 2px;
+        overflow-wrap: anywhere;
+    }
+
+    .top-bar {
+        gap: 8px;
+    }
+
+    .search-bar {
+        flex: 1;
+    }
+
+    .search-bar input {
+        padding: 0 10px;
+    }
+
+    .search-bar button {
+        width: 40px;
+    }
+
+    .video-card {
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .video-grid {
+        padding: 12px;
+    }
+}
