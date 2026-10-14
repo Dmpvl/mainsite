@@ -125,7 +125,8 @@ body {
 
 .topics {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    gap: 12px ;
     padding: 12px 24px;
     overflow-x: auto;
     scrollbar-width: thin;
@@ -243,6 +244,10 @@ body {
 }
 
 /* Responsive layout */
+
+.fa-youtube{
+    color: red;
+}
 
 @media (max-width: 900px) {
     .sidebar {
