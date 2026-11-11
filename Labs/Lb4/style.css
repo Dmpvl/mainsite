@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color: #202020;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eeeeee;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.planner-page {
+    width: 100%;
+    overflow-x: auto;
+    padding: 18px;
+}
+
+.planner {
+    width: min(1200px, 100%);
+    min-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border: 3px solid #d0d0d0;
+    box-shadow: 0 1px 4px #00000012;
+}
+
+/* Top heading */
+.planner-header {
+    min-height: 59px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px 6px 14px;
+    border-bottom: 2px solid #9c9c9c;
+}
+
+.header-main {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: auto minmax(115px, 0.65fr) minmax(170px, 1fr);
+    align-items: end;
+    gap: 15px;
+}
+
+.header-main h1 {
+    margin: 0;
+    color: #3a3a3a;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: clamp(27px, 3.4vw, 43px);
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 0.95;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.header-field {
+    min-width: 0;
+    display: flex;
+    align-items: end;
+    gap: 6px;
+    padding-bottom: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.header-field input {
+    width: 100%;
+    min-width: 35px;
+    height: 16px;
+    padding: 0 2px;
+    border: 0;
+    border-bottom: 1px solid #aaa;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font: 12px Arial, sans-serif;
+}
+
+.header-field input:focus,
+.task-text:focus {
+    border-bottom: 2px solid #555;
+}
+
+.header-checks {
+    display: grid;
+    justify-items: end;
+    gap: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-check span {
+    cursor: text;
+}
+
+input[type="checkbox"] {
+    width: 11px;
+    height: 11px;
+    margin: 0;
+    accent-color: #555;
+    cursor: pointer;
+}
+
+/* Main two-column planner area */
+.planner-content {
+    display: grid;
+    grid-template-columns: 28.5% minmax(0, 1fr);
+    min-height: 430px;
+}
+
+.sidebar {
+    min-width: 0;
+    padding: 4px 10px 8px 17px;
+    border-right: 1px solid #858585;
+}
+
+.todo-label {
+    height: 17px;
+    padding-right: 6px;
+    text-align: right;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.task-section {
+    margin: 0 0 7px;
+}
+
+.task-section h2 {
+    margin: 0 0 2px;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: 500;
+}
+
+.task-list {
+    display: grid;
+    grid-auto-rows: 19px;
+}
+
+.task-line {
+    display: grid;
+    grid-template-columns: 12px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 4px;
+    min-width: 0;
+}
+
+.task-text {
+    width: 100%;
+    height: 16px;
+    min-width: 0;
+    padding: 0 2px 1px;
+    border: 0;
+    border-bottom: 1px solid #b7b7b7;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font: 11px Arial, sans-serif;
+}
+
+.next-week-section {
+    margin-bottom: 0;
+}
+
+/* Calendar: three columns and two main rows */
+.week-grid {
+    min-width: 0;
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.day-card {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #898989;
+    border-bottom: 1px solid #898989;
+}
+
+.day-header {
+    position: relative;
+    min-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 22px;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+.day-name {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #222;
+    text-align: center;
+    font: 700 9px Arial, Helvetica, sans-serif;
+    letter-spacing: 0.4px;
+}
+
+.day-name:focus {
+    background: #f5f5f5;
+    outline: 1px dotted #888;
+}
+
+.day-check {
+    position: absolute;
+    right: 7px;
+    top: 6px;
+}
+
+.day-card textarea {
+    display: block;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    padding: 8px;
+    resize: none;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font: 12px/1.5 Arial, Helvetica, sans-serif;
+}
+
+.day-card textarea:focus {
+    background: #fcfcfc;
+    box-shadow: inset 0 0 0 1px #e2e2e2;
+}
+
+.bottom-day {
+    border-bottom: 0;
+}
+
+.weekend-stack {
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.weekend-stack .day-card {
+    border-right: 1px solid #898989;
+}
+
+.weekend-stack .sunday-card {
+    border-bottom: 0;
+}
+
+.planner-footer {
+    height: 12px;
+    background: #999;
+    border-top: 1px solid #777;
+}
+
+@media (max-width: 850px) {
+    .planner-page {
+        padding: 10px;
+    }
+
+    .planner-header {
+        grid-template-columns: minmax(0, 1fr) 170px;
+    }
+
+    .header-main {
+        gap: 9px;
+        grid-template-columns: auto minmax(95px, 0.65fr) minmax(135px, 1fr);
+    }
+}

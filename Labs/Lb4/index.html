@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="planner-page">
+        <article class="planner">
+            <header class="planner-header">
+                <div class="header-main">
+                    <h1 contenteditable="true" spellcheck="false" aria-label="Planner title">WEEKLY PLAN</h1>
+
+                    <label class="header-field">
+                        <span>WEEK OF</span>
+                        <input type="text" aria-label="Week of">
+                    </label>
+
+                    <label class="header-field habit-field">
+                        <span>HEALTHY HABIT</span>
+                        <input type="text" aria-label="Healthy habit">
+                    </label>
+                </div>
+
+                <div class="header-checks">
+                    <label class="status-check">
+                        <span contenteditable="true" spellcheck="false">ROCKED IT</span>
+                        <input type="checkbox" aria-label="Rocked it">
+                    </label>
+                    <label class="status-check">
+                        <span contenteditable="true" spellcheck="false">ROOM FOR IMPROVEMENT</span>
+                        <input type="checkbox" aria-label="Room for improvement">
+                    </label>
+                </div>
+            </header>
+
+            <div class="planner-content">
+                <aside class="sidebar">
+                    <div class="todo-label">TO DO</div>
+
+                    <section class="task-section">
+                        <h2>TOP 3 GOALS</h2>
+                        <div class="task-list" data-rows="3" data-label="Top 3 goals"></div>
+                    </section>
+
+                    <section class="task-section">
+                        <h2>EVERYTHING ELSE</h2>
+                        <div class="task-list" data-rows="11" data-label="Everything else"></div>
+                    </section>
+
+                    <section class="task-section next-week-section">
+                        <h2>NEXT WEEK</h2>
+                        <div class="task-list" data-rows="4" data-label="Next week"></div>
+                    </section>
+                </aside>
+
+                <section class="week-grid" aria-label="Weekly calendar">
+                    <article class="day-card">
+                        <div class="day-header">
+                            <input class="day-name" type="text" value="MONDAY" aria-label="Monday heading">
+                            <input class="day-check" type="checkbox" aria-label="Monday completed">
+                        </div>
+                        <textarea aria-label="Monday notes" spellcheck="false"></textarea>
+                    </article>
+
+                    <article class="day-card">
+                        <div class="day-header">
+                            <input class="day-name" type="text" value="TUESDAY" aria-label="Tuesday heading">
+                            <input class="day-check" type="checkbox" aria-label="Tuesday completed">
+                        </div>
+                        <textarea aria-label="Tuesday notes" spellcheck="false"></textarea>
+                    </article>
+
+                    <article class="day-card">
+                        <div class="day-header">
+                            <input class="day-name" type="text" value="WEDNESDAY" aria-label="Wednesday heading">
+                            <input class="day-check" type="checkbox" aria-label="Wednesday completed">
+                        </div>
+                        <textarea aria-label="Wednesday notes" spellcheck="false"></textarea>
+                    </article>
+
+                    <article class="day-card bottom-day">
+                        <div class="day-header">
+                            <input class="day-name" type="text" value="THURSDAY" aria-label="Thursday heading">
+                            <input class="day-check" type="checkbox" aria-label="Thursday completed">
+                        </div>
+                        <textarea aria-label="Thursday notes" spellcheck="false"></textarea>
+                    </article>
+
+                    <article class="day-card bottom-day">
+                        <div class="day-header">
+                            <input class="day-name" type="text" value="FRIDAY" aria-label="Friday heading">
+                            <input class="day-check" type="checkbox" aria-label="Friday completed">
+                        </div>
+                        <textarea aria-label="Friday notes" spellcheck="false"></textarea>
+                    </article>
+
+                    <div class="weekend-stack">
+                        <article class="day-card">
+                            <div class="day-header">
+                                <input class="day-name" type="text" value="SATURDAY" aria-label="Saturday heading">
+                                <input class="day-check" type="checkbox" aria-label="Saturday completed">
+                            </div>
+                            <textarea aria-label="Saturday notes" spellcheck="false"></textarea>
+                        </article>
+
+                        <article class="day-card sunday-card">
+                            <div class="day-header">
+                                <input class="day-name" type="text" value="SUNDAY" aria-label="Sunday heading">
+                                <input class="day-check" type="checkbox" aria-label="Sunday completed">
+                            </div>
+                            <textarea aria-label="Sunday notes" spellcheck="false"></textarea>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="planner-footer" aria-hidden="true"></footer>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

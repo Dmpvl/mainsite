@@ -1,0 +1,140 @@
+
+/* Custom font */
+@font-face {
+    font-family: "KeyboardFont";
+    src: url("fonts/keyboard-font.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #17191f;
+    color: white;
+    font-family: "KeyboardFont", monospace;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: minmax(600px, 1fr) 150px 230px;
+    gap: 20px;
+    max-width: 1500px;
+    margin: auto;
+    align-items: start;
+}
+
+.main-board {
+    display: grid;
+    gap: 8px;
+}
+
+.function-row,
+.key-row {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    gap: 5px;
+    min-height: 55px;
+}
+
+.key {
+    grid-column: span var(--span, 1);
+    min-width: 0;
+    border: 1px solid #414653;
+    border-radius: 6px;
+    background: #292e39;
+    color: #e4e8f0;
+    font-family: "KeyboardFont", monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s;
+    box-shadow: 0 3px 0 #101218;
+}
+
+.key:hover {
+    background: #286aab;
+    border-color: #55aaff;
+}
+
+.key.pressed {
+    background: #c83242;
+    border-color: #ff6674;
+    color: white;
+    box-shadow: 0 1px 0 #791c27;
+    transform: translateY(2px);
+}
+
+/* Navigation */
+.navigation {
+    display: grid;
+    gap: 30px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    grid-auto-rows: 55px;
+}
+
+.arrow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 55px);
+    gap: 5px;
+}
+
+.arrow-grid .up {
+    grid-column: 2;
+}
+
+.arrow-grid .left {
+    grid-column: 1;
+}
+
+.arrow-grid .down {
+    grid-column: 2;
+}
+
+.arrow-grid .right {
+    grid-column: 3;
+}
+
+/* Numeric keypad */
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 55px);
+    gap: 5px;
+}
+
+.numpad .zero {
+    grid-column: span 2;
+}
+
+.numpad .enter {
+    grid-row: span 2;
+}
+
+/* Empty positions */
+.spacer {
+    visibility: hidden;
+}
+
+/* Smaller screens */
+@media (max-width: 1000px) {
+    .keyboard {
+        min-width: 950px;
+    }
+
+    body {
+        overflow-x: auto;
+    }
+}
